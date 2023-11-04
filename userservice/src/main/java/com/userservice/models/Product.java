@@ -3,10 +3,10 @@ package com.userservice.models;
 public class Product {
     private String name;
     private String imageLink;
-    final private long productID;
-    final private long sellerID;
+    final private String productID;
+    final private String sellerID;
 
-    public Product(String name, long productID, long sellerID) {
+    public Product(String name, String productID, String sellerID) {
         this.name = name;
         this.productID = productID;
         this.sellerID = sellerID;
@@ -28,11 +28,11 @@ public class Product {
         this.imageLink = imageLink;
     }
 
-    public long getProductID() {
+    public String getProductID() {
         return this.productID;
     }    
 
-    public long getSellerID() {
+    public String getSellerID() {
         return this.sellerID;
     }
 

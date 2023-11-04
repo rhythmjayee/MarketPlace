@@ -5,7 +5,7 @@ import java.util.List;
 public class Buyer extends User {
     private List<Order> orders;
 
-    public Buyer(String name, long ID) {
+    public Buyer(String name, String ID) {
         super(name, ID);
     }
     public List<Order> getOrders() {

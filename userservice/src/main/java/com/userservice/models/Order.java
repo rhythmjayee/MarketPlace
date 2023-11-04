@@ -3,13 +3,13 @@ package com.userservice.models;
 import java.util.List;
 
 public class Order {
-    private final long orderID;
-    private final long buyerID;
-    private final long sellerID;
+    private final String orderID;
+    private final String buyerID;
+    private final String sellerID;
     private double orderValue;
     private List<ProductItem> orderItems;
 
-    public Order(long orderID, long buyerID, long sellerID, double orderValue, List<ProductItem> orderItems) {
+    public Order(String orderID, String buyerID, String sellerID, double orderValue, List<ProductItem> orderItems) {
         this.orderID = orderID;
         this.buyerID = buyerID;
         this.sellerID = sellerID;
@@ -17,7 +17,7 @@ public class Order {
         this.orderItems = orderItems;
     }
 
-    public long getOrderID() {
+    public String getOrderID() {
         return this.orderID;
     }
 
@@ -37,11 +37,11 @@ public class Order {
         this.orderItems = orderItems;
     }
 
-    public long getBuyerID() {
+    public String getBuyerID() {
         return this.buyerID;
     }
-    
-    public long getSellerID() {
+
+    public String getSellerID() {
         return this.sellerID;
     }
 

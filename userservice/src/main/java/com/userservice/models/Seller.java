@@ -3,12 +3,12 @@ package com.userservice.models;
 import java.util.List;
 
 public class Seller extends User{
-    private final long shopID;
+    private final String shopID;
     private List<Product> products;
 
-    public Seller(String name, long ID) {
-        super(name, ID);
-        this.shopID = ID;
+    public Seller(String name, String sellerID) {
+        super(name, sellerID);
+        this.shopID = sellerID;
     }
 
     public void addNewProduct(Product product) {
@@ -22,7 +22,7 @@ public class Seller extends User{
         this.products = products;
     }
 
-    public long getShopID() {
+    public String getShopID() {
         return this.shopID;
     }    
 }

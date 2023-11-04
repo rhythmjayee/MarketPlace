@@ -2,15 +2,15 @@ package com.userservice.models;
 
 class User {
     private String name;
-    final private long ID;
+    final private String userID;
 
-    public User(String name, final long ID) {
+    public User(String name, final String userID) {
         this.name = name;
-        this.ID = ID;
+        this.userID = userID;
     }
 
-    public long getUserId() {
-        return this.ID;
+    public String getUserId() {
+        return this.userID;
     }
     public String getName() {
         return this.name;
