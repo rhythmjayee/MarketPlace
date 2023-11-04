@@ -1,4 +1,4 @@
-package com.userservice.models;
+package com.userservice.userservice.models;
 
 public class Product {
     private String name;

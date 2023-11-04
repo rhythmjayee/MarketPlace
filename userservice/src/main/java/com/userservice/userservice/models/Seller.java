@@ -1,14 +1,13 @@
-package com.userservice.models;
+package com.userservice.userservice.models;
 
 import java.util.List;
 
 public class Seller extends User{
-    private final String shopID;
+    private String shopID;
     private List<Product> products;
 
-    public Seller(String name, String sellerID) {
-        super(name, sellerID);
-        this.shopID = sellerID;
+    public Seller(String name) {
+        super(name);
     }
 
     public void addNewProduct(Product product) {

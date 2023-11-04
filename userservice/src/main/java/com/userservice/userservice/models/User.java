@@ -1,12 +1,14 @@
-package com.userservice.models;
+package com.userservice.userservice.models;
+
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 class User {
     private String name;
-    final private String userID;
+    @MongoId
+    private String userID;
 
-    public User(String name, final String userID) {
+    public User(String name) {
         this.name = name;
-        this.userID = userID;
     }
 
     public String getUserId() {

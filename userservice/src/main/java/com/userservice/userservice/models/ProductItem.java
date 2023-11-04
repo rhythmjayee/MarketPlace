@@ -1,15 +1,17 @@
-package com.userservice.models;
+package com.userservice.userservice.models;
 
 public class ProductItem {
     private long quantity;
     private Product product;
+    private double productItemPrice;
 
     public ProductItem() {
     }
 
-    public ProductItem(long quantity, Product product) {
+    public ProductItem(long quantity, Product product, double productItemPrice) {
         this.quantity = quantity;
         this.product = product;
+        this.productItemPrice = productItemPrice;
     }
 
     public long getQuantity() {
@@ -26,6 +28,14 @@ public class ProductItem {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public double getProductItemPrice() {
+        return this.productItemPrice;
+    }
+
+    public void setProductItemPrice(double productItemPrice) {
+        this.productItemPrice = productItemPrice;
     }
 
     @Override

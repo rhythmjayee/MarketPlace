@@ -1,12 +1,15 @@
-package com.userservice.models;
+package com.userservice.userservice.models;
 
 import java.util.List;
 
-public class Buyer extends User {
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "customer")
+public class Customer extends User {
     private List<Order> orders;
 
-    public Buyer(String name, String ID) {
-        super(name, ID);
+    public Customer(String name) {
+        super(name);
     }
     public List<Order> getOrders() {
         return this.orders;
