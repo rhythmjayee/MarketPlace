@@ -20,7 +20,7 @@ public class UserserviceApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// repository.deleteAll();
+		customerRepository.deleteAll();
 		// save a couple of customers
 		customerRepository.save(new Customer("Alice Smith"));
 		customerRepository.save(new Customer("Bob Smith"));

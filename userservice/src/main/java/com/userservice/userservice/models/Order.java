@@ -49,9 +49,12 @@ public class Order {
     public String toString() {
         return "{" +
             " orderID='" + getOrderID() + "'" +
+            ", buyerID='" + getBuyerID() + "'" +
+            ", sellerID='" + getSellerID() + "'" +
             ", orderValue='" + getOrderValue() + "'" +
             ", orderItems='" + getOrderItems() + "'" +
             "}";
     }
+
 
 }

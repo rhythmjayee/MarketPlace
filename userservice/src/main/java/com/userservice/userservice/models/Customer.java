@@ -20,4 +20,13 @@ public class Customer extends User {
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+            "userId=" + getUserId() +"'"+
+            " orders='" + getOrders() + "'" +
+            "}";
+    }
+
 }

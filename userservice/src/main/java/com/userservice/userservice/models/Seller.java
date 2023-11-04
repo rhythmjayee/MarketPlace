@@ -23,5 +23,14 @@ public class Seller extends User{
 
     public String getShopID() {
         return this.shopID;
-    }    
+    } 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " shopID='" + getShopID() + "'" +
+            ", products='" + getProducts() + "'" +
+            "}";
+    }
+
 }
