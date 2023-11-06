@@ -18,4 +18,8 @@ public class AuthService {
 
         return new AuthResponse(accessToken);
     }
+    public AuthResponse login(AuthRequest authRequest) {
+        String accessToken = jwtService.generate(authRequest.getEmail(), authRequest.getUserType());
+        return new AuthResponse(accessToken);
+    }
 }
