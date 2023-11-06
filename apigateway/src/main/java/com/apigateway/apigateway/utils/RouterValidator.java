@@ -2,7 +2,7 @@ package com.apigateway.apigateway.utils;
 
 import java.util.List;
 
-import org.springframework.http.server.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 
 @Component

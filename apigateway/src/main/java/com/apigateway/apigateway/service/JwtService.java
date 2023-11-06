@@ -40,7 +40,8 @@ public class JwtService {
 
     private Boolean isTokenExpired(String token) {
         final Date expiration = getExpirationDateFromToken(token);
-        return expiration.before(new Date());
+        Boolean isExp = expiration.before(new Date());
+        return isExp;
     }
 
     public String generate(String email, String userType) {
@@ -65,6 +66,6 @@ public class JwtService {
     }
 
     public Boolean validateToken(String token) {
-        return !isTokenExpired(token);
+        return isTokenExpired(token);
     }
 }
