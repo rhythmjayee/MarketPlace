@@ -1,17 +1,24 @@
 package com.apigateway.apigateway.model;
 
-public class User {
-    private String email;
-    private String password;
-    private String userType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
-    public User() {
+class User {
+    @MongoId
+    private String userID;
+    private String name;
+    private String email;
+
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
-    public User(String email, String password, String userType) {
-        this.email = email;
-        this.password = password;
-        this.userType = userType;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -22,29 +29,16 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUserType() {
-        return this.userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public String getUserID() {
+        return this.userID;
     }
 
     @Override
     public String toString() {
         return "{" +
-            " email='" + getEmail() + "'" +
-            ", password='" + getPassword() + "'" +
-            ", userType='" + getUserType() + "'" +
+            " name='" + getName() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", userID='" + getUserID() + "'" +
             "}";
     }
-    
 }

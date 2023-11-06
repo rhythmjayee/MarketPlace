@@ -8,17 +8,13 @@ import com.apigateway.apigateway.model.AuthResponse;
 
 @Service
 public class AuthService {
+
     private final JwtService jwtService;
     @Autowired
     public AuthService(JwtService jwtService) {
         this.jwtService = jwtService;
     }
-    public AuthResponse register(AuthRequest authRequest) {
-        String accessToken = jwtService.generate(authRequest.getEmail(), authRequest.getUserType());
-
-        return new AuthResponse(accessToken);
-    }
-    public AuthResponse login(AuthRequest authRequest) {
+    public AuthResponse getAuthToken(AuthRequest authRequest) {
         String accessToken = jwtService.generate(authRequest.getEmail(), authRequest.getUserType());
         return new AuthResponse(accessToken);
     }
