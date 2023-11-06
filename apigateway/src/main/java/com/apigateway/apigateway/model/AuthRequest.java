@@ -5,9 +5,6 @@ public class AuthRequest {
     private String password;
     private String userType;
 
-    public AuthRequest() {
-    }
-
     public AuthRequest(String email, String password, String userType) {
         this.email = email;
         this.password = password;

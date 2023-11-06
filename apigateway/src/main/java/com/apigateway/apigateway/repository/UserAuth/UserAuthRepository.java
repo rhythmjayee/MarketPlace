@@ -1,4 +1,4 @@
-package com.apigateway.apigateway.repostiory.UserAuth;
+package com.apigateway.apigateway.repository.UserAuth;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

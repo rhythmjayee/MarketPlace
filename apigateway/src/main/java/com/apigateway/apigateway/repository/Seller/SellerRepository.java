@@ -1,4 +1,4 @@
-package com.apigateway.apigateway.repostiory.Seller;
+package com.apigateway.apigateway.repository.Seller;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.apigateway.apigateway.model.Seller;

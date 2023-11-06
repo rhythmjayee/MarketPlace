@@ -1,10 +1,10 @@
 package com.apigateway.apigateway.model;
-import java.util.Objects;
 
 public class RegisterUserRequest extends AuthRequest {
     private String name;
 
-    public RegisterUserRequest(String name) {
+    public RegisterUserRequest(String name, String email, String password, String userType) {
+        super(email, password, userType);
         this.name = name;
     }
 

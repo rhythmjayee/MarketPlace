@@ -10,18 +10,13 @@ import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.data.mongodb.SessionSynchronization;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
-import org.springframework.data.mongodb.core.convert.DbRefResolver;
-import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
-import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
-import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
-import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 
 @Configuration
 public class MongoConfig {
 
     @Primary
     @Bean(name = "userAuthDBProperties")
-    @ConfigurationProperties(prefix = "spring.data.mongodb.userAuth")
+    @ConfigurationProperties(prefix = "spring.data.mongodb.user-auth")
     public MongoProperties userAuthMongoProperties() {
         return new MongoProperties();
     }

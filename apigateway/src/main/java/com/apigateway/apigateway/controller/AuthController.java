@@ -1,8 +1,5 @@
 package com.apigateway.apigateway.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,14 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.apigateway.apigateway.model.AuthRequest;
-import com.apigateway.apigateway.model.AuthResponse;
 import com.apigateway.apigateway.model.Customer;
 import com.apigateway.apigateway.model.RegisterUserRequest;
 import com.apigateway.apigateway.model.Seller;
 import com.apigateway.apigateway.model.UserAuth;
-import com.apigateway.apigateway.repostiory.Customer.CustomerRepository;
-import com.apigateway.apigateway.repostiory.Seller.SellerRepository;
-import com.apigateway.apigateway.repostiory.UserAuth.UserAuthRepository;
+import com.apigateway.apigateway.repository.Customer.CustomerRepository;
+import com.apigateway.apigateway.repository.Seller.SellerRepository;
+import com.apigateway.apigateway.repository.UserAuth.UserAuthRepository;
 import com.apigateway.apigateway.service.AuthService;
 import com.apigateway.apigateway.utils.PasswordEncoder;
 
@@ -32,14 +28,13 @@ public class AuthController {
 	private CustomerRepository customerRepository;
     private SellerRepository sellerRepository;
 
-    public AuthController(AuthService authService, UserAuthRepository userAuthRepository,
-            CustomerRepository customerRepository, SellerRepository sellerRepository) {
+    public AuthController(AuthService authService, UserAuthRepository userAuthRepository, CustomerRepository customerRepository, SellerRepository sellerRepository) {
         this.authService = authService;
         this.userAuthRepository = userAuthRepository;
         this.customerRepository = customerRepository;
         this.sellerRepository = sellerRepository;
     }
-
+    
     @Transactional
     private void saveUserInDBs(RegisterUserRequest registerUserRequest) {
         String hashPassword = PasswordEncoder.bcryptPasswordEncode(registerUserRequest.getPassword());

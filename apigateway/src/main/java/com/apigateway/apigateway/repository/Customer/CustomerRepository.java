@@ -1,4 +1,4 @@
-package com.apigateway.apigateway.repostiory.Customer;
+package com.apigateway.apigateway.repository.Customer;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
