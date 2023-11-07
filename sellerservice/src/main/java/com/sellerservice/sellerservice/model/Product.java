@@ -1,16 +1,26 @@
 package com.sellerservice.sellerservice.model;
 
 public class Product {
-    final private String productID;
+    private String productID;
     final private String sellerID;
     private String productName;
+    private String productDescription;
     private String imageLink;
     private long productQuantity;
 
-    public Product(String productName, String productID, String sellerID) {
-        this.productName = productName;
-        this.productID = productID;
+    public Product(String sellerID, String productName, String productDescription, long productQuantity) {
         this.sellerID = sellerID;
+        this.productName = productName;
+        this.productQuantity = productQuantity;
+        this.productDescription = productDescription;
+    }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
     public long getProductQuantity() {

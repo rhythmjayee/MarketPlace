@@ -1,7 +1,5 @@
 package com.sellerservice.sellerservice.controller;
 
-import javax.swing.text.html.Option;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
