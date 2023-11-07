@@ -63,12 +63,12 @@ public class MongoConfig {
 
     @Bean
     public MongoTransactionManager customerMongoTransactionManager() {
-        return new MongoTransactionManager(userAuthMongoDatabaseFactory(userAuthMongoProperties()));
+        return new MongoTransactionManager(customerMongoDatabaseFactory(customerMongoProperties()));
     }
 
     @Bean
     public MongoTransactionManager sellerMongoTransactionManager() {
-        return new MongoTransactionManager(userAuthMongoDatabaseFactory(userAuthMongoProperties()));
+        return new MongoTransactionManager(sellerMongoDatabaseFactory(sellerMongoProperties()));
     }
 
     @Primary
