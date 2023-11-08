@@ -5,14 +5,16 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Document(collection = "product")
 public class Product {
     @MongoId
     private String productID;
-    final private String sellerID;
+    private String sellerID;
     private String productName;
     private String imageLink;
     private long productQuantity;

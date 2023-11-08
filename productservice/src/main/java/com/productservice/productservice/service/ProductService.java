@@ -1,6 +1,5 @@
 package com.productservice.productservice.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,8 +21,8 @@ public class ProductService {
         Product product = new Product(
                     newProduct.getSellerID(), newProduct.getProductName(),
                     newProduct.getProductDescription(), newProduct.getProductQuantity());
-        productRepository.save(product);
-        return product;
+        Product savedProduct = productRepository.save(product);
+        return savedProduct;
     }
     public Product updateProduct(String productID, Product newProduct) {
         Optional<Product> dbRes = productRepository.findById(productID);
