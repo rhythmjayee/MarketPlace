@@ -1,7 +1,7 @@
 package com.productservice.productservice.service;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
@@ -47,8 +47,8 @@ public class ProductService {
         if(!dbRes.isPresent()) return null;
         return dbRes.get();
     }
-    public List<Product> getAllProducts(String sellerID) {
-        List<Product> productList = productRepository.findAllProductsBySellerID(sellerID);
+    public Set<Product> getAllProducts(String sellerID) {
+        Set<Product> productList = productRepository.findAllProductsBySellerID(sellerID);
         return productList;
     } 
     

@@ -1,6 +1,6 @@
 package com.productservice.productservice.controller;
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.PutExchange;
 
 import com.productservice.productservice.model.Product;
 import com.productservice.productservice.service.ProductService;
@@ -47,7 +46,7 @@ public class ProductController {
     @GetMapping(value = "/my-products")
     @ResponseBody
     public ResponseEntity<Object> getAllProducts(@RequestParam(value = "sellerID") String sellerID) {
-        List<Product> res =  productService.getAllProducts(sellerID);
+        Set<Product> res =  productService.getAllProducts(sellerID);
         return ResponseEntity.ok(res);
     }
 

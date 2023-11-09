@@ -31,7 +31,7 @@ public class Product {
         this.productQuantity = productQuantity;
     }
 
-    public String getproductName() {
+    public String getProductName() {
         return this.productName;
     }
 
