@@ -1,12 +1,19 @@
 package com.sellerservice.sellerservice.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Product {
     private String productID;
-    final private String sellerID;
+    private String sellerID;
     private String productName;
-    private String productDescription;
     private String imageLink;
     private long productQuantity;
+    private String productDescription;
 
     public Product(String sellerID, String productName, String productDescription, long productQuantity) {
         this.sellerID = sellerID;
@@ -14,51 +21,4 @@ public class Product {
         this.productQuantity = productQuantity;
         this.productDescription = productDescription;
     }
-
-    public String getProductDescription() {
-        return productDescription;
-    }
-
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
-
-    public long getProductQuantity() {
-        return productQuantity;
-    }
-
-    public void setQuantity(long productQuantity) {
-        this.productQuantity = productQuantity;
-    }
-
-    public String getProductName() {
-        return this.productName;
-    }
-
-    public void setName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getImageLink() {
-        return this.imageLink;
-    }
-
-    public void setImageLink(String imageLink) {
-        this.imageLink = imageLink;
-    }
-
-    public String getProductID() {
-        return this.productID;
-    }    
-
-    public String getSellerID() {
-        return this.sellerID;
-    }
-
-    @Override
-    public String toString() {
-        return "Product [productID=" + productID + ", sellerID=" + sellerID + ", productName=" + productName + ", imageLink="
-                + imageLink + ", productQuantity=" + productQuantity + "]";
-    }
-    
 }

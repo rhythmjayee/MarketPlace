@@ -16,11 +16,11 @@ import com.sellerservice.sellerservice.model.Product;
 public interface ProductInterface {
     @PostMapping(value = "/product/create")
     @ResponseBody
-    public ResponseEntity<Object> createNewProduct(@RequestBody Product product);
+    public ResponseEntity<Product> createNewProduct(@RequestBody Product product);
 
     @PutMapping(value = "/product/update")
     @ResponseBody
-    public ResponseEntity<Object> updateProduct(@RequestBody Product product);
+    public ResponseEntity<Product> updateProduct(@RequestBody Product product);
 
     @GetMapping(value = "/product/my-products")
     @ResponseBody
@@ -28,9 +28,9 @@ public interface ProductInterface {
 
     @GetMapping(value = "/product/details")
     @ResponseBody
-    public ResponseEntity<Object> getProduct(@RequestParam(value = "productID") String productID);
+    public ResponseEntity<Product> getProduct(@RequestParam(value = "productID") String productID);
 
     @DeleteMapping(value = "/product/delete")
     @ResponseBody
-    public ResponseEntity<Object> deleteProduct(@RequestParam(value = "productID") String productID);
+    public ResponseEntity<Product> deleteProduct(@RequestParam(value = "productID") String productID);
 }

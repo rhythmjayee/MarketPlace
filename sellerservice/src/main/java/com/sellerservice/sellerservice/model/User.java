@@ -2,6 +2,11 @@ package com.sellerservice.sellerservice.model;
 
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
 class User {
     @MongoId
     private String userID;

@@ -1,5 +1,6 @@
 package com.sellerservice.sellerservice.model;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -9,8 +10,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Seller extends User{
     private Set<String> listedProductIDs;
 
+    public Seller() {
+    }
     public Seller(String name, String email) {
         super(name, email);
+    }
+    public Seller(String name, String email, Set<String> ls) {
+        super(name, email);
+        this.listedProductIDs = ls;
     }
 
     public int addProduct(String productID) {

@@ -31,14 +31,14 @@ public class ProductController {
 
     @PostMapping(value = "/create")
     @ResponseBody
-    public ResponseEntity<Object> createNewProduct(@RequestBody Product product) {
+    public ResponseEntity<Product> createNewProduct(@RequestBody Product product) {
         Product res =  productService.createProduct(product);
         return ResponseEntity.ok(res);
     }
 
     @PutMapping(value = "/update")
     @ResponseBody
-    public ResponseEntity<Object> updateProduct(@RequestBody Product product) {
+    public ResponseEntity<Product> updateProduct(@RequestBody Product product) {
         Product res =  productService.updateProduct(product.getProductID(),product);
         return ResponseEntity.ok(res);
     }
@@ -52,14 +52,14 @@ public class ProductController {
 
     @GetMapping(value = "/details")
     @ResponseBody
-    public ResponseEntity<Object> getProduct(@RequestParam(value = "productID") String productID) {
+    public ResponseEntity<Product> getProduct(@RequestParam(value = "productID") String productID) {
         Product res =  productService.getProduct(productID);
         return ResponseEntity.ok(res);
     }
 
     @DeleteMapping(value = "/delete")
     @ResponseBody
-    public ResponseEntity<Object> deleteProduct(@RequestParam(value = "productID") String productID) {
+    public ResponseEntity<Product> deleteProduct(@RequestParam(value = "productID") String productID) {
         System.out.println(productID);
         Product res =  productService.deleteProduct(productID);
         return ResponseEntity.ok(res);

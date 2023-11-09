@@ -1,8 +1,6 @@
 package com.sellerservice.sellerservice.service;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -26,27 +24,26 @@ public class SellerProductService {
         Product product = new Product(
                     sellerID, newProduct.getProductName(),
                     newProduct.getProductDescription(), newProduct.getProductQuantity());
-        Product res = (Product) productInterface.createNewProduct(product).getBody();
+        Product res = productInterface.createNewProduct(product).getBody();
         Optional<Seller> dbRes = sellerRepository.findById(sellerID);
         Seller seller = dbRes.get();
-        seller.addProduct(product.getProductID());
+        seller.addProduct(res.getProductID());
         sellerRepository.save(seller);
         return res;
     }
-    public Product updateProduct(Product newProduct) {
-        Product product = (Product) productInterface.updateProduct(newProduct).getBody();
-        return product;
+    public ResponseEntity<Product> updateProduct(Product newProduct) {
+        return productInterface.updateProduct(newProduct);
     }
-    public Product deleteProduct(String sellerID, String productID) {
-        Product product = (Product) productInterface.deleteProduct(productID).getBody();
+    public ResponseEntity<Product> deleteProduct(String sellerID, String productID) {
+        Product product = productInterface.deleteProduct(productID).getBody();
         Optional<Seller> dbRes = sellerRepository.findById(sellerID);
         Seller seller = dbRes.get();
         seller.deleteProduct(productID);
         sellerRepository.save(seller);
-        return product;
+        return ResponseEntity.ok(product);
     }
-    public ResponseEntity<Object> getProduct(String productID) {
-        ResponseEntity<Object> product = productInterface.deleteProduct(productID);
+    public ResponseEntity<Product> getProduct(String productID) {
+        ResponseEntity<Product> product = productInterface.deleteProduct(productID);
         return product;
     }
     public ResponseEntity<Object> getAllProducts(String sellerID) {
